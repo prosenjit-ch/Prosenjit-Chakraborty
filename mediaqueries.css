@@ -1,33 +1,30 @@
+/* Common Styles */
+#profile {
+  margin-bottom: 1rem;
+  min-height: 35vh;    /* Changed from fixed height */
+  height: auto;        /* Allow height to grow naturally */
+  outline: none;       /* Remove outline after testing */
+}
+
+.about-containers {
+  display: flex;       /* Added display flex */
+  flex-wrap: wrap;
+}
+
+#contact, #projects, footer {
+  height: fit-content;
+}
+
+/* Media Query for max-width: 1400px */
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 35vh;
-    margin-bottom: 1rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  #profile {
+    /* Removed height: 35vh to avoid jump issues */
+    min-height: 35vh;
     height: auto;
-    margin-bottom: 4rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
   }
 }
 
-
-
+/* Media Query for max-width: 1200px */
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
@@ -35,22 +32,22 @@
   #hamburger-nav {
     display: flex;
   }
-  #experience,
-  .experience-details-container {
+  #profile {
+    height: auto;
+    margin-bottom: 4rem;  /* keep bottom margin */
+    min-height: auto;     /* reset min-height to auto */
+  }
+  #experience, .experience-details-container {
     margin-top: 2rem;
   }
-  #profile,
-  .section-container {
+  #profile, .section-container {
     display: block;
   }
   .arrow {
     display: none;
   }
-  section,
-  .section-container {
+  section, .section-container {
     height: fit-content;
-  }
-  section {
     margin: 0 5%;
   }
   .section__pic-container {
@@ -58,77 +55,31 @@
     height: 275px;
     margin: 0 auto 2rem;
   }
-  .about-containers {
-    margin-top: 0;
-  }
 }
 
+/* Media Query for max-width: 600px */
 @media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: auto;
-  }
   #profile {
     height: auto;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;  /* Changed from 0 to keep spacing */
+    min-height: auto;
   }
-  article {
+  article, .contact-info-container p, .nav-links li a, .text_icon {
     font-size: 1rem;
   }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
+  .experience-sub-title, .section__text__p2 {
     font-size: 1.25rem;
   }
-  .logo {
-    font-size: 1rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+  .logo, .title {
+    font-size: 2rem;
   }
   .section__pic-container {
     width: auto;
     height: 46vw;
-    justify-content: center;
-  }
-  .section__text__p2 {
-    font-size: 1.25rem;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .text-container {
-    text-align: justify;
   }
   footer p {
     text-align: center;
     font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  .icon1 {
-    cursor: pointer;
-    height: 1rem;
-  }
-  
-  
-  .text_icon {
-    font-size: 0.7rem;
+    margin: 0.5rem 0;
   }
 }
